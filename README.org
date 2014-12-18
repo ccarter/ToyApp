@@ -1,0 +1,29 @@
+* ToyApp
+** General
+*** Actions
+Contains parser for the users script file and builds an ADT.
+
+Includes a function (process) and various supporting functions that can take a Cuboid,
+Action, and ShipPosition and process it.
+
+*** Cuboid
+Contains parser for the users field file and builds an ADT. Has an Enum that represents
+the distance of mines.
+
+*** Fire
+Fire Patterns
+
+*** Movement
+Deals with ship movement on 2D axis
+
+*** Types
+Types that are used throught app. ie. type Cuboid = Vector[Vector[FieldSpace]]
+
+
+** Issues
+ - Problem parsing files without newline at end
+ - Processes all actions/scripts even when unnecessary
+ - No configuration
+ - No scoring of a users script
+ - No tests
+ - probably buggy

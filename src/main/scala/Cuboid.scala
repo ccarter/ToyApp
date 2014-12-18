@@ -1,24 +1,21 @@
 package com.beardedcoder.mineExercise
 package cuboid
 
+import MineDistance.MineDistance
+import Types._
+
+sealed trait FieldSpace
+case object Empty extends FieldSpace {
+  override def toString() = "."
+}
+case object MissedMine extends FieldSpace {
+  override def toString() = "*"
+}
+case class Mine(md: MineDistance) extends FieldSpace {
+  override def toString() = md.toString
+}
+
 object Field {
-  import MineDistance._
-  import Types._
-
-  sealed trait FieldSpace
-
-  case object Empty extends FieldSpace {
-    override def toString() = "."
-  }
-
-  case object MissedMine extends FieldSpace {
-    override def toString() = "*"
-  }
-
-  case class Mine(md: MineDistance) extends FieldSpace {
-    override def toString() = md.toString
-  }
-
   def cuboidString(cs: Seq[Seq[FieldSpace]]): String = {
     cs.map { (c) =>
       c.map(_.toString).mkString("")

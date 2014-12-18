@@ -1,14 +1,16 @@
 * ToyApp
 ** General
+The general style of this application is to have the data types separate from the functions that act on them.
+The application is mostly functional, but sticks with plain Scala.
+
 *** Actions
-Contains parser for the users script file and builds an ADT.
+Contains parser for the users script file and builds an ADT from it.
 
 Includes a function (process) and various supporting functions that can take a Cuboid,
-Action, and ShipPosition and process it.
+Action, and ShipPosition and process them.
 
 *** Cuboid
-Contains parser for the users field file and builds an ADT. Has an Enum that represents
-the distance of mines.
+Contains parser for the users field file and builds an ADT that represents the playing field.
 
 *** Fire
 Fire Patterns
@@ -20,10 +22,15 @@ Deals with ship movement on 2D axis
 Types that are used throught app. ie. type Cuboid = Vector[Vector[FieldSpace]]
 
 
+** Running
+  Place 'script' and 'fields' file in root of project and then 'sbt run'. I've included a sample
 ** Issues
+ - Minimal error handling
  - Problem parsing files without newline at end
  - Processes all actions/scripts even when unnecessary
  - No configuration
- - No scoring of a users script
+ - No scoring of the end users script
  - No tests
+ - No scoping on exports
+ - Loading entire files into memory
  - probably buggy

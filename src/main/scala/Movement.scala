@@ -12,7 +12,7 @@ case class Coordinates2D(x: Int, y: Int)
 
 
 object Movement {
-  import com.beardedcoder.mineExercise.cuboid.Field._
+  import cuboid._
   import Types._
 
   //NOTE: Recalculating middle every move as my previous mechanism had bugs

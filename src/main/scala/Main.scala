@@ -1,6 +1,12 @@
 package com.beardedcoder.mineExercise
 
 import movement._
+import movement.Movement.startingPos
+import cuboid._
+import actions._
+import actions.Actions._
+import Field._
+import Types._
 
 object Main {
   def main(args: Array[String]) = {
@@ -12,13 +18,6 @@ object Main {
 }
 
 object App {
-  import cuboid._
-  import actions._
-  import actions.Actions._
-  import Field._
-  import Types._
-  import movement.Movement.startingPos
-
   def run(fieldIn: String, scriptIn: String) = {
     val script = addDrops(ScriptParser.parseAll(ScriptParser.all, scriptIn).get).reverse
     val startingCuboid = toVector(FieldParser.parseAll(FieldParser.all, fieldIn).get)
